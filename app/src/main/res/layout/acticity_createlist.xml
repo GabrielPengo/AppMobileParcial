@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="344dp"
+        android:layout_height="54dp"
+        android:text="Adicionar lista"
+        app:autoSizeTextType="uniform"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="110dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText6"
+        android:layout_width="338dp"
+        android:layout_height="35dp"
+        android:hint="Nome da lista"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="195dp" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="136dp"
+        android:layout_height="21dp"
+        android:text="Nome"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="175dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="406dp"
+        android:layout_height="330dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="269dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="329dp"
+        android:layout_height="22dp"
+        android:text="Imagem da lista"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="247dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_menu_camera"
+        tools:layout_editor_absoluteX="339dp"
+        tools:layout_editor_absoluteY="558dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="326dp"
+        android:layout_height="47dp"
+        android:text="Criar nova lista"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="623dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
