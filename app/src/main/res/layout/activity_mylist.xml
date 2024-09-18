@@ -135,10 +135,19 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editText"
-        android:layout_width="243dp"
-        android:layout_height="38dp"
+        android:layout_width="271dp"
+        android:layout_height="39dp"
         android:hint="Buscar"
         tools:layout_editor_absoluteX="87dp"
         tools:layout_editor_absoluteY="40dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_input_add"
+        tools:layout_editor_absoluteX="339dp"
+        tools:layout_editor_absoluteY="659dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

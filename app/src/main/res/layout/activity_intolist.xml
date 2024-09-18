@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_input_add"
+        tools:layout_editor_absoluteX="339dp"
+        tools:layout_editor_absoluteY="659dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="347dp"
+        android:layout_height="37dp"
+        android:text="Titulo da lista"
+        app:autoSizeTextType="uniform"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="144dp" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="249dp"
+        android:layout_height="19dp"
+        android:text="Qtd unidades"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="230dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="51dp"
+        android:layout_height="38dp"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="211dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton3"
+        android:layout_width="50dp"
+        android:layout_height="55dp"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_menu_edit"
+        tools:layout_editor_absoluteX="342dp"
+        tools:layout_editor_absoluteY="82dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="51dp"
+        android:layout_height="38dp"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="326dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText5"
+        android:layout_width="271dp"
+        android:layout_height="39dp"
+        android:hint="Buscar"
+        tools:layout_editor_absoluteX="67dp"
+        tools:layout_editor_absoluteY="88dp" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="249dp"
+        android:layout_height="19dp"
+        android:text="Qtd unidades"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="345dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="249dp"
+        android:layout_height="19dp"
+        android:text="Qtd unidades"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="286dp" />
+
+    <SearchView
+        android:layout_width="41dp"
+        android:layout_height="38dp"
+        android:background="#D1D1D1"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="88dp">
+
+    </SearchView>
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="249dp"
+        android:layout_height="20dp"
+        android:text="Nome do produto"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="326dp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="249dp"
+        android:layout_height="20dp"
+        android:text="Nome do produto"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="267dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="51dp"
+        android:layout_height="38dp"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="211dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="249dp"
+        android:layout_height="20dp"
+        android:text="Nome do produto"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="211dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="249dp"
+        android:layout_height="19dp"
+        android:text="Qtd unidades"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="230dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="51dp"
+        android:layout_height="38dp"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="267dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="249dp"
+        android:layout_height="20dp"
+        android:text="Nome do produto"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="211dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
