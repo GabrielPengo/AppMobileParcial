@@ -11,7 +11,7 @@
         android:id="@+id/imageView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#D3D2D2"
+        android:background="@drawable/border_textview"
         tools:layout_editor_absoluteX="237dp"
         tools:layout_editor_absoluteY="362dp"
         tools:srcCompat="@tools:sample/avatars" />
@@ -20,8 +20,8 @@
         android:id="@+id/textView9"
         android:layout_width="128dp"
         android:layout_height="22dp"
-        android:background="#D3D2D2"
         android:text="TextView"
+        android:background="@drawable/border_textview"
         tools:layout_editor_absoluteX="46dp"
         tools:layout_editor_absoluteY="679dp" />
 
@@ -118,7 +118,7 @@
     <SearchView
         android:layout_width="319dp"
         android:layout_height="40dp"
-        android:background="#D1D1D1"
+        android:background="#D3D2D2"
         tools:layout_editor_absoluteX="46dp"
         tools:layout_editor_absoluteY="40dp" />
 
