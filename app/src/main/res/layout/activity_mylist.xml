@@ -116,11 +116,13 @@
         tools:layout_editor_absoluteY="490dp" />
 
     <SearchView
-        android:layout_width="319dp"
-        android:layout_height="40dp"
+        android:layout_width="41dp"
+        android:layout_height="38dp"
         android:background="#D1D1D1"
         tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="40dp" />
+        tools:layout_editor_absoluteY="40dp">
+
+    </SearchView>
 
     <TextView
         android:id="@+id/textView11"
@@ -130,5 +132,13 @@
         app:autoSizeTextType="uniform"
         tools:layout_editor_absoluteX="48dp"
         tools:layout_editor_absoluteY="99dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText"
+        android:layout_width="243dp"
+        android:layout_height="38dp"
+        android:hint="Buscar"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="40dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
