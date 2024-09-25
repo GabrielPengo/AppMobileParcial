@@ -37,23 +37,37 @@ class LoginActivity : AppCompatActivity() {
             // Salva os dados do usuário no ViewModel ao clicar no botão
             val email = binding.editTextEmail.text.toString()
             val password = binding.editTextPassword.text.toString()
-            viewModel.email = email
-            viewModel.password = password
-            val usuario = usuariosBD.getUsuario(email, password)
-            if(usuario != null) {
-                val intent = Intent(this, MyListActivity::class.java)
-                startActivity(intent)
-            }
-            else {
+
+            if(email.isEmpty() || email.isBlank() || password.isEmpty() || password.isBlank()) {
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Aviso")
-                builder.setMessage("Por favor, verifique os dados inseridos ou cadastre-se.")
+                builder.setMessage("Por favor, preencha todos os campos.")
                 builder.setPositiveButton("OK") { dialog: DialogInterface, _: Int ->
                     dialog.dismiss()
                 }
 
                 val dialog = builder.create()
                 dialog.show()
+            }
+            else {
+                viewModel.email = email
+                viewModel.password = password
+                val usuario = usuariosBD.getUsuario(email, password)
+                if(usuario != null) {
+                    val intent = Intent(this, MyListActivity::class.java)
+                    startActivity(intent)
+                }
+                else {
+                    val builder = AlertDialog.Builder(this)
+                    builder.setTitle("Aviso")
+                    builder.setMessage("Por favor, verifique os dados inseridos ou cadastre-se.")
+                    builder.setPositiveButton("OK") { dialog: DialogInterface, _: Int ->
+                        dialog.dismiss()
+                    }
+
+                    val dialog = builder.create()
+                    dialog.show()
+                }
             }
         }
 
