@@ -7,6 +7,10 @@ android {
     namespace = "com.example.parcialapp"
     compileSdk = 34
 
+    viewBinding {
+        enable = true
+    }
+
     defaultConfig {
         applicationId = "com.example.parcialapp"
         minSdk = 24

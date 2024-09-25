@@ -27,7 +27,7 @@
         android:text="nome" />
 
     <EditText
-        android:id="@+id/editTextText20"
+        android:id="@+id/editTextNome"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -44,7 +44,7 @@
         android:text="e-mail" />
 
     <EditText
-        android:id="@+id/editTextText21"
+        android:id="@+id/editTextEmail"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -61,12 +61,12 @@
         android:text="senha" />
 
     <EditText
-        android:id="@+id/editTextText22"
+        android:id="@+id/editTextSenha"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
-        android:inputType="text"
+        android:inputType="textPassword"
         />
 
     <TextView
@@ -78,16 +78,16 @@
         android:text="confirmar senha" />
 
     <EditText
-        android:id="@+id/editTextText23"
+        android:id="@+id/editTextConfSenha"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
-        android:inputType="text"
+        android:inputType="textPassword"
         />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/regButton"
         android:layout_width="350dp"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
