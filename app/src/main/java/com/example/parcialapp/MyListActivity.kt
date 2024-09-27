@@ -2,10 +2,14 @@ package com.example.parcialapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModel
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.parcialapp.databinding.ActivityLoginBinding
 import com.example.parcialapp.databinding.ActivityMylistBinding
 
@@ -17,48 +21,51 @@ class MyListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        binding = ActivityMylistBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
         binding = ActivityMylistBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        // Restaure o estado, se houver
-//        if (savedInstanceState != null) {
-//            viewModel.email = savedInstanceState.getString("email") ?: ""
-//            viewModel.password = savedInstanceState.getString("password") ?: ""
-//        }
-//
-//        // Preenche os campos com os dados do ViewModel
-//        binding.editTextEmail.setText(viewModel.email)
-//        binding.editTextPassword.setText(viewModel.password)
-//
-//        binding.loginButton.setOnClickListener {
-//            // Salva os dados do usuário no ViewModel ao clicar no botão
-//            val email = binding.editTextEmail.text.toString()
-//            val password = binding.editTextPassword.text.toString()
-//            viewModel.email = email
-//            viewModel.password = password
-//            val usuario = usuariosBD.getUsuario(email, password)
-//            if(usuario != null) {
-//                val intent = Intent(this, MyListActivity::class.java)
-//                startActivity(intent) // Iniciar a nova atividade
-//            }
-//        }
-//
-//        binding.regButton.setOnClickListener {
-//            val intent = Intent(this, CadastroActivity::class.java)
-//            startActivity(intent) // Iniciar a nova atividade
-//        }
+        val listasList = listOf(
+            ListaDeCompras("lista1"),
+            ListaDeCompras("lista2"),
+            ListaDeCompras("lista3"),
+            ListaDeCompras("lista4"),
+            ListaDeCompras("lista5"),
+            ListaDeCompras("lista6"),
+            ListaDeCompras("lista7"),
+            ListaDeCompras("lista8"),
+            ListaDeCompras("lista9"),
+            ListaDeCompras("lista10"),
+            ListaDeCompras("lista11"),
+            ListaDeCompras("lista12"),
+            ListaDeCompras("lista13"),
+            ListaDeCompras("lista14"),
+            ListaDeCompras("lista15"),
+            ListaDeCompras("lista16"),
+            ListaDeCompras("lista17")
+        )
+
+        val adapter = ListaDeComprasAdapter(listasList, ::onListItemClicked)
+        val layoutManager = LinearLayoutManager(this)
+
+        binding.recyclerViewListasDeCompras.adapter = adapter
+        binding.recyclerViewListasDeCompras.layoutManager = layoutManager
+
     }
 
-//    override fun onSaveInstanceState(outState: Bundle) {
-//        super.onSaveInstanceState(outState)
-//        // Salva os dados do ViewModel no outState
-//        outState.putString("email", viewModel.email)
-//        outState.putString("password", viewModel.password)
-//    }
+    private fun onListItemClicked(lista: ListaDeCompras) {
+        Toast.makeText(this, "Clicou!", Toast.LENGTH_LONG).show()
+    }
 }
 
 class MyListViewModel : ViewModel() {
-    var email: String = ""
-    var password: String = ""
+//    var email: String = ""
+//    var password: String = ""
 }

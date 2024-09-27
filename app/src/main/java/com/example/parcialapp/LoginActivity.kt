@@ -3,11 +3,13 @@ package com.example.parcialapp
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.parcialapp.databinding.ActivityLoginBinding
 import com.example.parcialapp.databinding.ActivityMylistBinding
 
@@ -83,6 +85,7 @@ class LoginActivity : AppCompatActivity() {
         outState.putString("email", viewModel.email)
         outState.putString("password", viewModel.password)
     }
+
 }
 
 class LoginViewModel : ViewModel() {
