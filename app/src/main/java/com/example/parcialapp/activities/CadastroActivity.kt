@@ -1,4 +1,4 @@
-package com.example.parcialapp
+package com.example.parcialapp.activities
 
 import android.content.DialogInterface
 import android.os.Bundle
@@ -8,6 +8,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import com.example.parcialapp.databinding.ActivityCadastroBinding
+import com.example.parcialapp.entities.Usuario
+import com.example.parcialapp.db.UsuariosBD
 
 class CadastroActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCadastroBinding

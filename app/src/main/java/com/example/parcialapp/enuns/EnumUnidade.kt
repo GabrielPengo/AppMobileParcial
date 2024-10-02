@@ -1,6 +1,6 @@
-package com.example.parcialapp
+package com.example.parcialapp.enuns
 
-enum class EnumUnidade(var descricao: String) {
+enum class EnumUnidade(private var descricao: String) {
     UN("unidade(s)"),
     PCT("pacote(s)"),
     KG("kg"),

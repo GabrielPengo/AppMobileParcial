@@ -1,4 +1,6 @@
-package com.example.parcialapp
+package com.example.parcialapp.db
+
+import com.example.parcialapp.entities.Usuario
 
 class UsuariosBD {
 

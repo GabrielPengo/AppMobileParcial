@@ -1,17 +1,15 @@
-package com.example.parcialapp
+package com.example.parcialapp.activities
 
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.parcialapp.databinding.ActivityLoginBinding
-import com.example.parcialapp.databinding.ActivityMylistBinding
+import com.example.parcialapp.db.UsuariosBD
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -56,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
                 viewModel.password = password
                 val usuario = usuariosBD.getUsuario(email, password)
                 if(usuario != null) {
-                    val intent = Intent(this, MyListActivity::class.java)
+                    val intent = Intent(this, ListasActivity::class.java)
                     startActivity(intent)
                 }
                 else {

@@ -1,4 +1,4 @@
-package com.example.parcialapp
+package com.example.parcialapp.enuns
 
 enum class EnumCategoria(private var descricao: String) {
     FRIOS("Frios"),

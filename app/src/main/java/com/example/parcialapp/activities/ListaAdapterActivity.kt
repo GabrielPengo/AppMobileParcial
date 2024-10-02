@@ -1,19 +1,20 @@
-package com.example.parcialapp
+package com.example.parcialapp.activities
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.parcialapp.databinding.ActivityListadecomprasBinding
+import com.example.parcialapp.databinding.ActivityListaadapterBinding
+import com.example.parcialapp.entities.Lista
 
-class ListaDeComprasAdapter(
-    private val listasDeCompras: List<ListaDeCompras>,
-    private val onClick: (ListaDeCompras) -> Unit) : RecyclerView.Adapter<ListaDeComprasAdapter.ViewHolder>() {
+class ListaAdapterActivity(
+    private var listasDeCompras: List<Lista>,
+    private val onClick: (Lista) -> Unit) : RecyclerView.Adapter<ListaAdapterActivity.ViewHolder>() {
 
     inner class ViewHolder(
-        private val binding: ActivityListadecomprasBinding
+        private val binding: ActivityListaadapterBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        private var currentItem: ListaDeCompras? = null
+        private var currentItem: Lista? = null
 
         init {
             itemView.setOnClickListener {
@@ -23,15 +24,14 @@ class ListaDeComprasAdapter(
             }
         }
 
-        fun bind(lista: ListaDeCompras) {
+        fun bind(lista: Lista) {
             currentItem = lista
-
             binding.nomeLista.text = lista.getNome()
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ActivityListadecomprasBinding.inflate(LayoutInflater.from(parent.context))
+        val binding = ActivityListaadapterBinding.inflate(LayoutInflater.from(parent.context))
         return ViewHolder(binding)
     }
 
@@ -41,4 +41,9 @@ class ListaDeComprasAdapter(
     }
 
     override fun getItemCount(): Int = listasDeCompras.size
+
+    fun updateList(novaLista: List<Lista>) {
+        listasDeCompras = novaLista
+        notifyDataSetChanged()
+    }
 }

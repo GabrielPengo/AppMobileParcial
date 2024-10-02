@@ -1,4 +1,4 @@
-package com.example.parcialapp
+package com.example.parcialapp.entities
 
 class Usuario(private var nome: String, private var email: String, private var senha: String) {
 
