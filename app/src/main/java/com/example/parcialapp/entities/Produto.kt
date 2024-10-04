@@ -1,4 +1,4 @@
-package com.example.parcialapp
+package com.example.parcialapp.entities
 
 class Produto(private var nome: String, private var quantidade: Int, private var unidade: String, private var categoria: String,
               private var comprado: Boolean) {
