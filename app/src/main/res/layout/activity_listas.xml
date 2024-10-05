@@ -23,8 +23,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="#D1D1D1"
-        android:layout_marginStart="36dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/barraBusca"
         app:layout_constraintTop_toTopOf="@id/barraBusca">
 
     </SearchView>
@@ -34,10 +33,10 @@
         android:layout_width="271dp"
         android:layout_height="40dp"
         android:layout_marginTop="100dp"
-        android:layout_marginStart="76dp"
         android:hint="Buscar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView11"

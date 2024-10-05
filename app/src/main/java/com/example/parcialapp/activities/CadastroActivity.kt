@@ -15,7 +15,6 @@ import com.example.parcialapp.entities.ListaDeCompras
 
 class CadastroActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCadastroBinding
-    private val viewModel: CadastroViewModel by viewModels()
     val usuariosBD = UsuariosBD.instance
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,20 +23,6 @@ class CadastroActivity : AppCompatActivity() {
 
         binding = ActivityCadastroBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Restaure o estado, se houver
-        if (savedInstanceState != null) {
-            viewModel.nome = savedInstanceState.getString("nome") ?: ""
-            viewModel.email = savedInstanceState.getString("email") ?: ""
-            viewModel.password = savedInstanceState.getString("password") ?: ""
-            viewModel.confPassword = savedInstanceState.getString("confPassword") ?: ""
-        }
-
-        // Preenche os campos com os dados do ViewModel
-        binding.editTextNome.setText(viewModel.nome)
-        binding.editTextEmail.setText(viewModel.email)
-        binding.editTextSenha.setText(viewModel.password)
-        binding.editTextConfSenha.setText(viewModel.confPassword)
 
         binding.regButton.setOnClickListener {
             // Salva os dados do usuário no ViewModel ao clicar no botão
@@ -78,18 +63,4 @@ class CadastroActivity : AppCompatActivity() {
             }
         }
     }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        // Salva os dados do ViewModel no outState
-        outState.putString("email", viewModel.email)
-        outState.putString("password", viewModel.password)
-    }
-}
-
-class CadastroViewModel : ViewModel() {
-    var nome: String = ""
-    var email: String = ""
-    var password: String = ""
-    var confPassword: String = ""
 }

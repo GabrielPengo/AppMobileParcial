@@ -19,7 +19,6 @@ import java.io.Serializable
 class ListasActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityListasBinding
-    private val viewModel: MyListViewModel by viewModels()
     private lateinit var adapter: ListaAdapterActivity
     private val listaBD = ListasBD.instance
     private lateinit var usuario: Usuario
@@ -61,9 +60,4 @@ class ListasActivity : AppCompatActivity() {
         val listasList = listaBD.getListas(usuario)
         adapter.updateList(listasList)
     }
-}
-
-class MyListViewModel : ViewModel() {
-//    var email: String = ""
-//    var password: String = ""
 }
