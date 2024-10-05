@@ -22,12 +22,6 @@ class AdListaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val imagemSelecionada: ImageView = findViewById(R.id.floatingActionButton2)
-
-        binding.floatingActionButton2.setOnClickListener {
-            selectImage()
-        }
-
         usuario = intent.getSerializableExtra("usuarioLogado") as Usuario
 
         binding = ActivityAdlistaBinding.inflate(layoutInflater)
@@ -39,9 +33,10 @@ class AdListaActivity : AppCompatActivity() {
             listaBD.adLista(listaDeCompras)
             finish()
         }
+        binding.floatingActionButton2.setOnClickListener {
+            selectImage()
+        }
     }
-
-
     private fun selectImage() {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         startActivity(intent)
