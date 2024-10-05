@@ -19,15 +19,23 @@ class LoginActivity : AppCompatActivity() {
     private val viewModel: LoginViewModel by viewModels()
     private val usuariosBD = UsuariosBD.instance
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_login)
+        val imageView: ImageView = findViewById(R.id.imageView4)
+        Glide.with(this).load("https://i0.wp.com/www.opuspesquisa.com/wp-content/uploads/2021/03/Pesquisa-de-mercado-para-supermercado.png?resize=730%2C441&ssl=1").into(imageView)
         enableEdgeToEdge()
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        Glide.with(this)
+            .load("https://i0.wp.com/www.opuspesquisa.com/wp-content/uploads/2021/03/Pesquisa-de-mercado-para-supermercado.png?resize=730%2C441&ssl=1")
+            .into(binding.imageView4) // Use o ImageView do binding
 
-        val imageView: ImageView = binding.imageView4
-        Glide.with(this).load("https://th.bing.com/th/id/OIP.1ohXGYjGsj2knt44DG_lTwAAAA?rs=1&pid=ImgDetMain").into(imageView)
 
         // Restaure o estado, se houver
         if (savedInstanceState != null) {
@@ -91,7 +99,6 @@ class LoginActivity : AppCompatActivity() {
         outState.putString("password", viewModel.password)
     }
 }
-
 class LoginViewModel : ViewModel() {
     var email: String = ""
     var password: String = ""
