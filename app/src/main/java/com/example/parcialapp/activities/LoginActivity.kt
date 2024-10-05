@@ -23,6 +23,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        val imageView: ImageView = findViewById(R.id.imageView4)
+        Glide.with(this).load("https://th.bing.com/th/id/OIP.1ohXGYjGsj2knt44DG_lTwAAAA?rs=1&pid=ImgDetMain").into(imageView)
+
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -58,6 +61,7 @@ class LoginActivity : AppCompatActivity() {
                 val usuario = usuariosBD.getUsuario(email, password)
                 if(usuario != null) {
                     val intent = Intent(this, ListasActivity::class.java)
+                    intent.putExtra("usuarioLogado", usuario)
                     startActivity(intent)
                 }
                 else {
@@ -86,14 +90,6 @@ class LoginActivity : AppCompatActivity() {
         outState.putString("email", viewModel.email)
         outState.putString("password", viewModel.password)
     }
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val imageView: ImageView = findViewById(R.id.imageView4)
-        Glide.with(this).load("https://th.bing.com/th/id/OIP.1ohXGYjGsj2knt44DG_lTwAAAA?rs=1&pid=ImgDetMain").into(imageView)
-    }
-
 }
 
 class LoginViewModel : ViewModel() {

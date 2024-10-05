@@ -1,6 +1,9 @@
 package com.example.parcialapp.entities
 
-class Usuario(private var nome: String, private var email: String, private var senha: String) {
+import java.io.Serializable
+
+class Usuario(private var nome: String, private var email: String, private var senha: String, private var listasDeCompras: MutableList<ListaDeCompras>) :
+    Serializable {
 
     fun getNome(): String{
         return nome;
@@ -24,5 +27,9 @@ class Usuario(private var nome: String, private var email: String, private var s
 
     fun setSenha(senha: String) {
         this.senha = senha;
+    }
+
+    fun getListaDeCompras(): MutableList<ListaDeCompras> {
+        return listasDeCompras
     }
 }

@@ -41,6 +41,11 @@
             android:name=".activities.AdListaActivity"
             android:exported="true">
         </activity>
+
+        <activity
+            android:name=".activities.ProdutosActivity"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>

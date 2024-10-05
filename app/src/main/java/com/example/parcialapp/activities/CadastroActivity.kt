@@ -2,6 +2,7 @@ package com.example.parcialapp.activities
 
 import android.content.DialogInterface
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -10,6 +11,7 @@ import androidx.lifecycle.ViewModel
 import com.example.parcialapp.databinding.ActivityCadastroBinding
 import com.example.parcialapp.entities.Usuario
 import com.example.parcialapp.db.UsuariosBD
+import com.example.parcialapp.entities.ListaDeCompras
 
 class CadastroActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCadastroBinding
@@ -57,20 +59,11 @@ class CadastroActivity : AppCompatActivity() {
             }
 
             else if(password == confPassword) {
-                val novoUsuario = Usuario(nome, email, password)
+                val listaDeCompras: MutableList<ListaDeCompras> = mutableListOf()
+                val novoUsuario = Usuario(nome, email, password, listaDeCompras)
                 usuariosBD.adUsuario(novoUsuario)
                 var clicouOk = false
-
-                val builder = AlertDialog.Builder(this)
-                builder.setTitle("Aviso")
-                builder.setMessage("Cadastro feito com sucesso!")
-                builder.setPositiveButton("OK") { dialog: DialogInterface, _: Int ->
-                    dialog.dismiss()
-                }
-
-                val dialog = builder.create()
-                dialog.show()
-
+                Toast.makeText(this, "Cadastro feito com sucesso!: $nome", Toast.LENGTH_SHORT).show()
             }
             else {
                 val builder = AlertDialog.Builder(this)

@@ -4,17 +4,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialapp.databinding.ActivityListaadapterBinding
-import com.example.parcialapp.entities.Lista
+import com.example.parcialapp.entities.ListaDeCompras
 
 class ListaAdapterActivity(
-    private var listasDeCompras: List<Lista>,
-    private val onClick: (Lista) -> Unit) : RecyclerView.Adapter<ListaAdapterActivity.ViewHolder>() {
+    private var listasDeCompras: List<ListaDeCompras>,
+    private val onClick: (ListaDeCompras) -> Unit) : RecyclerView.Adapter<ListaAdapterActivity.ViewHolder>() {
 
     inner class ViewHolder(
         private val binding: ActivityListaadapterBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        private var currentItem: Lista? = null
+        private var currentItem: ListaDeCompras? = null
 
         init {
             itemView.setOnClickListener {
@@ -24,9 +24,9 @@ class ListaAdapterActivity(
             }
         }
 
-        fun bind(lista: Lista) {
-            currentItem = lista
-            binding.nomeLista.text = lista.getNome()
+        fun bind(listaDeCompras: ListaDeCompras) {
+            currentItem = listaDeCompras
+            binding.nomeLista.text = listaDeCompras.getNome()
         }
     }
 
@@ -42,7 +42,7 @@ class ListaAdapterActivity(
 
     override fun getItemCount(): Int = listasDeCompras.size
 
-    fun updateList(novaLista: List<Lista>) {
+    fun updateList(novaLista: List<ListaDeCompras>) {
         listasDeCompras = novaLista
         notifyDataSetChanged()
     }

@@ -1,5 +1,6 @@
 package com.example.parcialapp.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
@@ -7,8 +8,8 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.parcialapp.databinding.ActivityAdprodutoBinding
-import com.example.parcialapp.db.ListaBD
-import com.example.parcialapp.entities.Lista
+import com.example.parcialapp.db.ListasBD
+import com.example.parcialapp.entities.ListaDeCompras
 import com.example.parcialapp.entities.Produto
 import com.example.parcialapp.enuns.EnumCategoria
 import com.example.parcialapp.enuns.EnumUnidade
@@ -16,13 +17,14 @@ import com.example.parcialapp.enuns.EnumUnidade
 class AdProdutoActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAdprodutoBinding
-    private lateinit var lista: Lista
-    val listaBD = ListaBD.instance
+    private val listasBD = ListasBD.instance
+    private lateinit var listaDeCompras: ListaDeCompras
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         enableEdgeToEdge()
+
+        listaDeCompras = intent.getSerializableExtra("listaDeCompras") as ListaDeCompras
 
         binding = ActivityAdprodutoBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -54,15 +56,16 @@ class AdProdutoActivity : AppCompatActivity() {
             }
             else {
                 val produto = Produto(nome, Integer.valueOf(quantidade), unidade, categoria, false)
-                lista = Lista(nome)
-                lista.getListaProdutos().add(produto)
+                listaDeCompras.adProduto(produto)
 
                 Toast.makeText(this, "Item adicionado: $nome", Toast.LENGTH_SHORT).show()
             }
+            // Retorna a lista atualizada para a atividade anterior
+            val resultIntent = Intent().apply {
+                putExtra("listaDeCompras", listaDeCompras) // Passa a lista atualizada
+            }
+            setResult(RESULT_OK, resultIntent)
+            finish() // Fecha a Activity e volta para a anterior
         }
-    }
-    override fun onPause() {
-        super.onPause()
-        listaBD.adLista(lista)
     }
 }

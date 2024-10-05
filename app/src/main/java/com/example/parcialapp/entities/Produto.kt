@@ -1,13 +1,15 @@
 package com.example.parcialapp.entities
 
+import java.io.Serializable
+
 class Produto(private var nome: String, private var quantidade: Int, private var unidade: String, private var categoria: String,
-              private var comprado: Boolean) {
+              private var comprado: Boolean) : Serializable {
 
     fun getNome(): String {
         return nome;
     }
 
-    fun getQuantidadeUnidade(): String {
+    fun getQtdeUnidade(): String {
         return "$quantidade $unidade"
     }
 
@@ -15,7 +17,15 @@ class Produto(private var nome: String, private var quantidade: Int, private var
         return categoria
     }
 
+    fun getComprado(): Boolean {
+        return comprado
+    }
+
     fun setComprado(comprado: Boolean) {
         this.comprado = comprado
+    }
+
+    fun setCategoria(categoria: String) {
+        this.categoria = categoria
     }
 }
