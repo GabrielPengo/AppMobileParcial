@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModel
 import com.example.parcialapp.R
 import com.example.parcialapp.databinding.ActivityLoginBinding
 import com.example.parcialapp.db.UsuariosBD
+import com.bumptech.glide.Glide
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -91,23 +92,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val imageView: ImageView = findViewById(R.id.imageView4)
         Glide.with(this).load("https://th.bing.com/th/id/OIP.1ohXGYjGsj2knt44DG_lTwAAAA?rs=1&pid=ImgDetMain").into(imageView)
-    }
-
-}
-
-private fun Any.into(imageView: ImageView) {
-    TODO("Not yet implemented")
-}
-
-private fun Any.load(s: String): Any {
-    TODO("Not yet implemented")
-}
-
-class Glide {
-    companion object {
-        fun with(loginActivity: LoginActivity): Any {
-
-        }
     }
 
 }
