@@ -11,7 +11,7 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:text="Crie sua conta"
         android:textAlignment="center"
         android:gravity="center"
@@ -22,13 +22,13 @@
         android:id="@+id/textView30"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="81dp"
         android:layout_marginTop="10dp"
         android:text="nome" />
 
     <EditText
         android:id="@+id/editTextNome"
-        android:layout_width="350dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
@@ -39,13 +39,13 @@
         android:id="@+id/textView31"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="81dp"
         android:layout_marginTop="20dp"
         android:text="e-mail" />
 
     <EditText
         android:id="@+id/editTextEmail"
-        android:layout_width="350dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
@@ -56,13 +56,13 @@
         android:id="@+id/textView32"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="81dp"
         android:layout_marginTop="20dp"
         android:text="senha" />
 
     <EditText
         android:id="@+id/editTextSenha"
-        android:layout_width="350dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
@@ -73,13 +73,13 @@
         android:id="@+id/textView33"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="81dp"
         android:layout_marginTop="20dp"
         android:text="confirmar senha" />
 
     <EditText
         android:id="@+id/editTextConfSenha"
-        android:layout_width="350dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
@@ -88,7 +88,7 @@
 
     <Button
         android:id="@+id/regButton"
-        android:layout_width="350dp"
+        android:layout_width="150dp"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
         android:layout_height="wrap_content"

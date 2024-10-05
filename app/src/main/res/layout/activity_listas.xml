@@ -10,20 +10,20 @@
         android:id="@+id/botaoFlutuante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="270dp"
-        android:layout_marginTop="600dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="50dp"
         android:clickable="true"
         android:focusable="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/barraBusca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <SearchView
         android:id="@+id/lupa"
-        android:layout_width="41dp"
+        android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="#D1D1D1"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="36dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/barraBusca">
 
@@ -33,10 +33,10 @@
         android:id="@+id/barraBusca"
         android:layout_width="271dp"
         android:layout_height="40dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginStart="45dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="76dp"
         android:hint="Buscar"
-        app:layout_constraintStart_toStartOf="@id/lupa"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
@@ -44,10 +44,10 @@
         android:layout_width="315dp"
         android:layout_height="47dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:text="Tuas listas"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/barraBusca"
+        app:layout_constraintTop_toTopOf="parent"
         app:autoSizeTextType="uniform" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -58,7 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/barraBusca"
         app:layout_constraintVertical_bias="1.0"
         tools:listitem="@layout/activity_listaadapter" />
 

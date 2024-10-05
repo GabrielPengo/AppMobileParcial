@@ -9,12 +9,12 @@
         android:id="@+id/floatingActionButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="600dp"
-        android:layout_marginStart="320dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="50dp"
         android:clickable="true"
         app:srcCompat="@android:drawable/ic_input_add"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView16" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <TextView
         android:id="@+id/textView16"
@@ -31,27 +31,28 @@
         android:id="@+id/floatingActionButton3"
         android:layout_width="50dp"
         android:layout_height="55dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="24dp"
         android:clickable="true"
         app:srcCompat="@android:drawable/ic_menu_edit"
-        app:layout_constraintStart_toEndOf="@id/editText5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editText5"
         android:layout_width="271dp"
         android:layout_height="39dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="40dp"
         android:hint="Buscar"
         app:layout_constraintStart_toEndOf="@id/search"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <SearchView
         android:id="@+id/search"
-        android:layout_width="41dp"
+        android:layout_width="40dp"
         android:layout_height="38dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="40dp"
         android:background="#D1D1D1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

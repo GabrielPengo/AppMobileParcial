@@ -11,7 +11,7 @@
         android:layout_height="54dp"
         android:layout_marginBottom="50dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="40dp"
         android:text="Adicionar lista"
         app:autoSizeTextType="uniform"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +19,7 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editText6"
-        android:layout_width="338dp"
+        android:layout_width="200dp"
         android:layout_height="35dp"
         android:layout_marginStart="32dp"
         android:hint="Nome da lista"
@@ -34,17 +34,17 @@
         android:layout_width="136dp"
         android:layout_height="21dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="120dp"
         android:text="Nome"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView27" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="329dp"
         android:layout_height="329dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView25"
         app:layout_constraintVertical_bias="0.541"
@@ -55,7 +55,7 @@
         android:layout_width="329dp"
         android:layout_height="22dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:text="Imagem da lista"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editText6" />
@@ -73,10 +73,10 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="326dp"
+        android:layout_width="150dp"
         android:layout_height="47dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="8dp"
         android:text="Criar nova lista"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView" />
