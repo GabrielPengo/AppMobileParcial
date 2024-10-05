@@ -15,7 +15,6 @@ import java.io.Serializable
 class ProdutosActivity : AppCompatActivity(){
 
     private lateinit var binding: ActivityProdutosBinding
-    private val viewModel: ProdutosViewModel by viewModels()
     private lateinit var adapter: ProdutoAdapterActivity
     private lateinit var listaDeCompras: ListaDeCompras
     private var produtos: MutableList<Produto>? = null
@@ -62,9 +61,4 @@ class ProdutosActivity : AppCompatActivity(){
         produtos = listaDeCompras.getListaProdutos() as? MutableList<Produto> ?: mutableListOf()
         adapter.atualizaListaDeProdutos(produtos ?: mutableListOf())
     }
-}
-
-class ProdutosViewModel : ViewModel() {
-//    var email: String = ""
-//    var password: String = ""
 }

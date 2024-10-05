@@ -16,10 +16,7 @@ import com.bumptech.glide.Glide
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    private val viewModel: LoginViewModel by viewModels()
     private val usuariosBD = UsuariosBD.instance
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,17 +32,6 @@ class LoginActivity : AppCompatActivity() {
         Glide.with(this)
             .load("https://i0.wp.com/www.opuspesquisa.com/wp-content/uploads/2021/03/Pesquisa-de-mercado-para-supermercado.png?resize=730%2C441&ssl=1")
             .into(binding.imageView4) // Use o ImageView do binding
-
-
-        // Restaure o estado, se houver
-        if (savedInstanceState != null) {
-            viewModel.email = savedInstanceState.getString("email") ?: ""
-            viewModel.password = savedInstanceState.getString("password") ?: ""
-        }
-
-        // Preenche os campos com os dados do ViewModel
-        binding.editTextEmail.setText(viewModel.email)
-        binding.editTextPassword.setText(viewModel.password)
 
         binding.loginButton.setOnClickListener {
             // Salva os dados do usuário no ViewModel ao clicar no botão
@@ -64,8 +50,6 @@ class LoginActivity : AppCompatActivity() {
                 dialog.show()
             }
             else {
-                viewModel.email = email
-                viewModel.password = password
                 val usuario = usuariosBD.getUsuario(email, password)
                 if(usuario != null) {
                     val intent = Intent(this, ListasActivity::class.java)
@@ -91,15 +75,4 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        // Salva os dados do ViewModel no outState
-        outState.putString("email", viewModel.email)
-        outState.putString("password", viewModel.password)
-    }
-}
-class LoginViewModel : ViewModel() {
-    var email: String = ""
-    var password: String = ""
 }

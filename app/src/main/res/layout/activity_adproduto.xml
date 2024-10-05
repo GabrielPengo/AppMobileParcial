@@ -10,19 +10,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="450dp"
         android:text="Categoria"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editText2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinner2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="450dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/textView15" />
 
     <TextView
         android:id="@+id/textView14"
@@ -81,12 +80,12 @@
     <Button
         android:id="@+id/button4"
         android:layout_width="150dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="550dp"
+        android:layout_height="wrap_content"
         android:text="Adicionar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="550dp" />
 
     <TextView
         android:id="@+id/textView12"
