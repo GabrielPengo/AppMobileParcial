@@ -3,11 +3,13 @@ package com.example.parcialapp.activities
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
+import com.example.parcialapp.R
 import com.example.parcialapp.databinding.ActivityLoginBinding
 import com.example.parcialapp.db.UsuariosBD
 
@@ -82,6 +84,26 @@ class LoginActivity : AppCompatActivity() {
         // Salva os dados do ViewModel no outState
         outState.putString("email", viewModel.email)
         outState.putString("password", viewModel.password)
+    }
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val imageView: ImageView = findViewById(R.id.imageView4)
+        Glide.with(this).load("https://th.bing.com/th/id/OIP.1ohXGYjGsj2knt44DG_lTwAAAA?rs=1&pid=ImgDetMain").into(imageView)
+    }
+
+}
+
+private fun Any.load(s: String): Any {
+    TODO("Not yet implemented")
+}
+
+class Glide {
+    companion object {
+        fun with(loginActivity: LoginActivity): Any {
+
+        }
     }
 
 }
