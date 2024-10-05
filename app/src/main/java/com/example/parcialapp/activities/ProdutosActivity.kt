@@ -3,14 +3,11 @@ package com.example.parcialapp.activities
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.parcialapp.databinding.ActivityProdutosBinding
 import com.example.parcialapp.entities.ListaDeCompras
 import com.example.parcialapp.entities.Produto
-import java.io.Serializable
 
 class ProdutosActivity : AppCompatActivity(){
 
@@ -29,6 +26,8 @@ class ProdutosActivity : AppCompatActivity(){
         binding = ActivityProdutosBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.nomeLista.text = listaDeCompras.getNome()
+
         adapter = ProdutoAdapterActivity(produtos ?: mutableListOf(), ::onProdutoItemClicked)
         val layoutManager = LinearLayoutManager(this)
 
@@ -42,11 +41,7 @@ class ProdutosActivity : AppCompatActivity(){
         }
     }
 
-    private fun onProdutoItemClicked(produto: Produto) {
-        val intent = Intent(this, AdProdutoActivity::class.java)
-        intent.putExtra("produtos", produtos as Serializable)
-        startActivity(intent)
-    }
+    private fun onProdutoItemClicked(produto: Produto) {}
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -54,6 +49,11 @@ class ProdutosActivity : AppCompatActivity(){
             listaDeCompras = data?.getSerializableExtra("listaDeCompras") as ListaDeCompras
             atualizaTela() // Atualiza a tela com a lista modificada
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        atualizaTela()
     }
 
     private fun atualizaTela() {

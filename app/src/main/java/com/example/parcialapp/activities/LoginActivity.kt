@@ -5,18 +5,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
 import com.example.parcialapp.R
 import com.example.parcialapp.databinding.ActivityLoginBinding
 import com.example.parcialapp.db.UsuariosBD
 import com.bumptech.glide.Glide
+import com.example.parcialapp.entities.Usuario
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private val usuariosBD = UsuariosBD.instance
+    private var usuario: Usuario? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +31,9 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         Glide.with(this)
             .load("https://i0.wp.com/www.opuspesquisa.com/wp-content/uploads/2021/03/Pesquisa-de-mercado-para-supermercado.png?resize=730%2C441&ssl=1")
-            .into(binding.imageView4) // Use o ImageView do binding
+            .into(binding.imageView4)
 
         binding.loginButton.setOnClickListener {
-            // Salva os dados do usuário no ViewModel ao clicar no botão
             val email = binding.editTextEmail.text.toString()
             val password = binding.editTextPassword.text.toString()
 
@@ -50,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
                 dialog.show()
             }
             else {
-                val usuario = usuariosBD.getUsuario(email, password)
+                usuario = usuariosBD.getUsuario(email, password)
                 if(usuario != null) {
                     val intent = Intent(this, ListasActivity::class.java)
                     intent.putExtra("usuarioLogado", usuario)

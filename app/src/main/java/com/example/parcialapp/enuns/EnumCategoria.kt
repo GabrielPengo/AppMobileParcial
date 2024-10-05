@@ -9,7 +9,8 @@ enum class EnumCategoria(private var descricao: String) {
     LIMPEZA("Limpeza"),
     FRUTAS("Frutas"),
     LEGUMES("Legumes"),
-    MANTIMENTOS("Mantimentos");
+    MANTIMENTOS("Mantimentos"),
+    OUTROS("Outros");
 
     fun getDescricao(): String {
         return descricao

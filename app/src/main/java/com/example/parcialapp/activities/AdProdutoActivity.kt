@@ -1,11 +1,13 @@
 package com.example.parcialapp.activities
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.parcialapp.databinding.ActivityAdprodutoBinding
 import com.example.parcialapp.db.ListasBD
@@ -17,7 +19,6 @@ import com.example.parcialapp.enuns.EnumUnidade
 class AdProdutoActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAdprodutoBinding
-    private val listasBD = ListasBD.instance
     private lateinit var listaDeCompras: ListaDeCompras
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +46,8 @@ class AdProdutoActivity : AppCompatActivity() {
 
         spinnerCategoria.adapter = adapter2
 
+        val quantidadePattern = "^[0-9]+$"
+
         binding.button4.setOnClickListener {
             val nome = binding.nomeItem.text.toString()
             val quantidade = binding.editText2.text.toString()
@@ -52,20 +55,42 @@ class AdProdutoActivity : AppCompatActivity() {
             val categoria = binding.spinner2.selectedItem.toString()
 
             if (nome.isEmpty() || nome.isBlank() || quantidade.isEmpty() || quantidade.isBlank() || unidade.isEmpty() || categoria.isEmpty()) {
-                Toast.makeText(this, "Dados inválidos!", Toast.LENGTH_SHORT).show()
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Aviso")
+                builder.setMessage("Preencha todos os campos!")
+                builder.setPositiveButton("OK") { dialog: DialogInterface, _: Int ->
+                    dialog.dismiss()
+                }
+
+                val dialog = builder.create()
+                dialog.show()
             }
+
+            else if (!quantidade.matches(quantidadePattern.toRegex())) {
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Aviso")
+                builder.setMessage("A quantidade deve ser um número válido e sem espaços.")
+                builder.setPositiveButton("OK") { dialog: DialogInterface, _: Int ->
+                    dialog.dismiss()
+                }
+
+                val dialog = builder.create()
+                dialog.show()
+            }
+
             else {
                 val produto = Produto(nome, Integer.valueOf(quantidade), unidade, categoria, false)
                 listaDeCompras.adProduto(produto)
+                ListasBD.instance.atualizaLista(listaDeCompras)
 
                 Toast.makeText(this, "Item adicionado: $nome", Toast.LENGTH_SHORT).show()
+
+                val resultIntent = Intent().apply {
+                    putExtra("listaDeCompras", listaDeCompras)
+                }
+                setResult(RESULT_OK, resultIntent)
+                finish()
             }
-            // Retorna a lista atualizada para a atividade anterior
-            val resultIntent = Intent().apply {
-                putExtra("listaDeCompras", listaDeCompras) // Passa a lista atualizada
-            }
-            setResult(RESULT_OK, resultIntent)
-            finish() // Fecha a Activity e volta para a anterior
         }
     }
 }

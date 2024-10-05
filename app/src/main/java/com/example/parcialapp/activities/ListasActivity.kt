@@ -3,13 +3,8 @@ package com.example.parcialapp.activities
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.parcialapp.R
 import com.example.parcialapp.databinding.ActivityListasBinding
 import com.example.parcialapp.db.ListasBD
 import com.example.parcialapp.entities.ListaDeCompras
@@ -42,6 +37,12 @@ class ListasActivity : AppCompatActivity() {
             val intent = Intent(this, AdListaActivity::class.java)
             intent.putExtra("usuarioLogado", usuario as Serializable)
             startActivity(intent)
+        }
+
+        binding.botaoLogout.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

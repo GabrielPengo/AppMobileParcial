@@ -34,4 +34,13 @@ class ListasBD {
     fun adLista(listaDeCompras: ListaDeCompras) {
         listaListasDeCompras.add(listaDeCompras)
     }
+
+    fun atualizaLista(listaDeCompras: ListaDeCompras) {
+        listaListasDeCompras.forEachIndexed { index, lista ->
+            if (lista.getNome() == listaDeCompras.getNome()) {
+                listaListasDeCompras[index] = listaDeCompras
+                return
+            }
+        }
+    }
 }

@@ -30,7 +30,7 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/barraBusca"
-        android:layout_width="271dp"
+        android:layout_width="270dp"
         android:layout_height="40dp"
         android:layout_marginTop="100dp"
         android:hint="Buscar"
@@ -40,7 +40,7 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="315dp"
+        android:layout_width="230dp"
         android:layout_height="47dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="40dp"
@@ -60,5 +60,15 @@
         app:layout_constraintTop_toBottomOf="@+id/barraBusca"
         app:layout_constraintVertical_bias="1.0"
         tools:listitem="@layout/activity_listaadapter" />
+
+    <Button
+        android:id="@+id/botaoLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="40dp"
+        android:text="Logout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

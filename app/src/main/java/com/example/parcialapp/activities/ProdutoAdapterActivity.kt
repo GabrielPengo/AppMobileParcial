@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialapp.databinding.ActivityProdutoadapterBinding
-import com.example.parcialapp.entities.ListaDeCompras
 import com.example.parcialapp.entities.Produto
 
 class ProdutoAdapterActivity(

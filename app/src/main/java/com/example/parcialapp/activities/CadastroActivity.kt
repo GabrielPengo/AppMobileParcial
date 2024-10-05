@@ -4,10 +4,8 @@ import android.content.DialogInterface
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
 import com.example.parcialapp.databinding.ActivityCadastroBinding
 import com.example.parcialapp.entities.Usuario
 import com.example.parcialapp.db.UsuariosBD
@@ -25,7 +23,6 @@ class CadastroActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.regButton.setOnClickListener {
-            // Salva os dados do usuário no ViewModel ao clicar no botão
             val nome = binding.editTextNome.text.toString()
             val email = binding.editTextEmail.text.toString()
             val password = binding.editTextSenha.text.toString()
@@ -43,12 +40,24 @@ class CadastroActivity : AppCompatActivity() {
                 dialog.show()
             }
 
+            else if(validarEmail(email) == false) {
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Aviso")
+                builder.setMessage("Preencha o e-mail corretamente")
+                builder.setPositiveButton("OK") { dialog: DialogInterface, _: Int ->
+                    dialog.dismiss()
+                }
+
+                val dialog = builder.create()
+                dialog.show()
+            }
+
             else if(password == confPassword) {
                 val listaDeCompras: MutableList<ListaDeCompras> = mutableListOf()
                 val novoUsuario = Usuario(nome, email, password, listaDeCompras)
                 usuariosBD.adUsuario(novoUsuario)
-                var clicouOk = false
                 Toast.makeText(this, "Cadastro feito com sucesso!: $nome", Toast.LENGTH_SHORT).show()
+                finish()
             }
             else {
                 val builder = AlertDialog.Builder(this)
@@ -62,5 +71,9 @@ class CadastroActivity : AppCompatActivity() {
                 dialog.show()
             }
         }
+    }
+    private fun validarEmail(email: String): Boolean {
+        val emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+        return email.matches(emailPattern.toRegex())
     }
 }
