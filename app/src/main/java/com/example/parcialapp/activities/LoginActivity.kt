@@ -23,11 +23,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val imageView: ImageView = findViewById(R.id.imageView4)
-        Glide.with(this).load("https://th.bing.com/th/id/OIP.1ohXGYjGsj2knt44DG_lTwAAAA?rs=1&pid=ImgDetMain").into(imageView)
-
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val imageView: ImageView = binding.imageView4
+        Glide.with(this).load("https://th.bing.com/th/id/OIP.1ohXGYjGsj2knt44DG_lTwAAAA?rs=1&pid=ImgDetMain").into(imageView)
 
         // Restaure o estado, se houver
         if (savedInstanceState != null) {
