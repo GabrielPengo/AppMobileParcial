@@ -95,6 +95,10 @@ class LoginActivity : AppCompatActivity() {
 
 }
 
+private fun Any.into(imageView: ImageView) {
+    TODO("Not yet implemented")
+}
+
 private fun Any.load(s: String): Any {
     TODO("Not yet implemented")
 }
